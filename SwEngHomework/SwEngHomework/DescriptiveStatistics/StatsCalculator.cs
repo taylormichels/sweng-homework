@@ -8,9 +8,6 @@ namespace SwEngHomework.DescriptiveStatistics
         public Stats Calculate(string semicolonDelimitedContributions)
         {
             string[] contributions = semicolonDelimitedContributions.Split(';');
-            if (contributions.Length == 0)
-                return new Stats { Average = 0, Median = 0, Range = 0 };
-
             decimal[] values = new decimal[contributions.Length];
             Stats result = new Stats();
 
