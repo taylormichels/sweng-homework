@@ -22,6 +22,9 @@ namespace SwEngHomework.DescriptiveStatistics
             }
 
             values = values.Where(val => val != 0).ToArray();
+            if (values.Length == 0)
+                return new Stats { Average = 0, Median = 0, Range = 0 };
+
             Array.Sort(values);
 
             result.Average = (double) Math.Round(values.Sum() / values.Length, 2);
